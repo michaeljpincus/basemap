@@ -19,7 +19,7 @@
     },
     "country-borders": {
       "type": "geojson",
-      "data": "borders.geojson",
+      "data": "base",
       "generateId": true
     },
     "state-borders": {
