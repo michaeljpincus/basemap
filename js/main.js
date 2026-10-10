@@ -3,7 +3,7 @@ import * as maplibregl from 'https://unpkg.com/maplibre-gl@^6.12.0/dist/maplibre
 const map = new maplibregl.Map({
   container: 'map',
   minZoom: 3,
-  style: 'testingbasemap.json' 
+  style: 'basemap.json' 
 });
 
 window.map = map;

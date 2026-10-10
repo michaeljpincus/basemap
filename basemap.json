@@ -19,26 +19,26 @@
     },
     "country-borders": {
       "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/borders.geojson",
+      "data": "borders.geojson",
       "generateId": true
     },
     "state-borders": {
       "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/stateborders.geojson",
+      "data": "stateborders.geojson",
       "generateId": true
     },
     "roads": {
       "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/roads.geojson",
+      "data": "roads.geojson",
       "generateId": true
     },
     "territory-labels": {
       "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/territories.geojson"
+      "data": "territories.geojson"
     },
     "hawaii-label": {
       "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/hawaii.geojson"
+      "data": "hawaii.geojson"
     }
   },
   "layers": [
