@@ -27,9 +27,3 @@ map.on('click', e => {
     .forEach(f => console.log(f.properties.class, f.properties['name:en'] || f.properties.name, map.getZoom().toFixed(1)));
 });
 
-map.setStyle('basemap.json', {
-  transformStyle: (previous, next) => ({
-    ...next,
-    sprite: new URL('./sprites/sprite', window.location.href).href
-  })
-});
