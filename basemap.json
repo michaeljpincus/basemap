@@ -29,7 +29,7 @@
     },
     "roads": {
       "type": "geojson",
-      "data": "roads.geojson",
+      "data": "base",
       "generateId": true
     },
     "territory-labels": {
@@ -80,7 +80,7 @@
     {
       "id": "country-borders",
       "type": "line",
-      "source": "country-borders",
+      "source": "base",
       "paint": {
         "line-color": "black",
         "line-width": 0.5
@@ -97,6 +97,18 @@
         "line-color": "#515050",
         "line-width": 0.8,
         "line-dasharray": [0, 3]
+      }
+    },
+    {
+      "id": "roads",
+      "type": "line",
+      "source": "base",
+      "source-layer": "transportation",
+      "minzoom": 1,
+      "filter": ["in", ["get", "class"], ["literal", ["motorway", "trunk", "primary"]]],
+      "paint": {
+        "line-color": "#e3e3e3",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.3, 10, 1]
       }
     },
     {

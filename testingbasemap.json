@@ -2,7 +2,7 @@
   "version": 8,
   "projection": { "type": "globe" },
   "glyphs": "./fonts/{fontstack}/{range}.pbf",
-  "sprite": "http://127.0.0.1:5500/index.html/sprites/sprite",
+  "sprite": "./sprites/sprite",
   "sources": {
     "terrain": {
       "type": "raster-dem",
