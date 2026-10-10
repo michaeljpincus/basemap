@@ -17,19 +17,9 @@
       "url": "https://tiles.openfreemap.org/planet",
       "attribution": "&copy; <a href=\"https://openfreemap.org\">OpenFreeMap</a> &copy; OpenMapTiles, data &copy; OpenStreetMap contributors"
     },
-    "country-borders": {
-      "type": "geojson",
-      "data": "base",
-      "generateId": true
-    },
     "state-borders": {
       "type": "geojson",
       "data": "stateborders.geojson",
-      "generateId": true
-    },
-    "roads": {
-      "type": "geojson",
-      "data": "base",
       "generateId": true
     },
     "territory-labels": {
@@ -81,6 +71,8 @@
       "id": "country-borders",
       "type": "line",
       "source": "base",
+      "source-layer": "boundary",
+      "filter": ["all", ["==", ["get", "admin_level"], 2], ["==", ["get", "maritime"], 0]],
       "paint": {
         "line-color": "black",
         "line-width": 0.5
