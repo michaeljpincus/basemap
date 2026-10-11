@@ -570,7 +570,7 @@
       "id": "extra-adm1-labels",
       "type": "symbol",
       "source": "extra-adm1-labels",
-      "minzoom": 2,
+      "minzoom": 4,
       "maxzoom": 8,
       "layout": {
         "text-field": ["step", ["zoom"], ["get", "abbr"], 4, ["get", "name"]],
