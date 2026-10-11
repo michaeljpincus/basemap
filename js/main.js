@@ -18,7 +18,7 @@ map.on('click', e => {
   const r = 6;
   map.queryRenderedFeatures(
     [[e.point.x - r, e.point.y - r], [e.point.x + r, e.point.y + r]],
-    { layers: ['state-borders'] }
+    { layers: ['adm1-borders'] }
   ).forEach(f => console.log(f.properties.adm0_l, f.properties.adm0_r));
 });
 
