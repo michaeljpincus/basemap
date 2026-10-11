@@ -156,6 +156,31 @@
       }
     },
     {
+      "id": "country-borders2",
+      "type": "line",
+      "source": "base",
+      "source-layer": "boundary",
+      "filter": ["all", ["==", ["get", "admin_level"], 2], ["==", ["get", "maritime"], 0]],
+      "paint": {
+        "line-color": "black",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "adm1-borders2",
+      "type": "line",
+      "source": "adm1-borders",
+      "minzoom": 4,
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#515050",
+        "line-width": 0.8,
+        "line-dasharray": [0, 3]
+      }
+    },
+    {
       "id": "neighborhoods",
       "type": "symbol",
       "source": "base",
@@ -619,6 +644,13 @@
           ["match", ["var", "n"],
             ["Palestinian Territories", "State of Palestine"], " ",
             ["T"], "Turkey",
+            ["San Marino"], " ",
+            ["Vatican City"], " ",
+            ["Monaco"], " ",
+            ["Luxembourg"], " ",
+            ["Guernsey"], " ",
+            ["Jersey"], " ",
+            ["Isle of Man"], " ",
             ["var", "n"]
           ]
         ],

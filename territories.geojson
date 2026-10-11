@@ -23,6 +23,10 @@
     { "type": "Feature", "properties": { "name": "French Polynesia" },            "geometry": { "type": "Point", "coordinates": [-149.40, -17.68] } },
     { "type": "Feature", "properties": { "name": "New Caledonia" },               "geometry": { "type": "Point", "coordinates": [165.60, -21.25] } },
     { "type": "Feature", "properties": { "name": "French Southern Lands" },       "geometry": { "type": "Point", "coordinates": [69.35, -49.35] } },
-    { "type": "Feature", "properties": { "name": "Clipperton" },                  "geometry": { "type": "Point", "coordinates": [-109.20, 10.30] } }
+    { "type": "Feature", "properties": { "name": "Clipperton" },                  "geometry": { "type": "Point", "coordinates": [-109.20, 10.30] } },
+    { "type": "Feature", "properties": { "name": "Luxembourg" },                  "geometry": { "type": "Point", "coordinates": [6.13, 49.82] } },
+    { "type": "Feature", "properties": { "name": "Monaco" },                      "geometry": { "type": "Point", "coordinates": [7.42, 43.74] } },
+    { "type": "Feature", "properties": { "name": "Vatican City" },                "geometry": { "type": "Point", "coordinates": [12.45, 41.90] } },
+    { "type": "Feature", "properties": { "name": "San Marino" },                  "geometry": { "type": "Point", "coordinates": [12.46, 43.94] } }
   ]
 }
