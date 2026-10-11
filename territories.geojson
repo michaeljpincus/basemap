@@ -30,6 +30,7 @@
     { "type": "Feature", "properties": { "name": "San Marino" },                  "geometry": { "type": "Point", "coordinates": [12.46, 43.94] } },
     { "type": "Feature", "properties": { "name": "Isle of Man" },                 "geometry": { "type": "Point", "coordinates": [-4.55, 54.24] } },
     { "type": "Feature", "properties": { "name": "Guernsey" },                    "geometry": { "type": "Point", "coordinates": [-2.58, 49.45] } },
-    { "type": "Feature", "properties": { "name": "Jersey" },                      "geometry": { "type": "Point", "coordinates": [-2.13, 49.21] } }
+    { "type": "Feature", "properties": { "name": "Jersey" },                      "geometry": { "type": "Point", "coordinates": [-2.13, 49.21] } },
+    { "type": "Feature", "properties": { "name": "Gibraltar" }, "geometry": { "type": "Point", "coordinates": [-5.35, 36.14] } }
   ]
 }
