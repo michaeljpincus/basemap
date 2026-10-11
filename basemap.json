@@ -19,30 +19,30 @@
     },
     "adm1-borders": {
       "type": "geojson",
-      "data": "stateborders.geojson",
+      "data": "https://michaeljpincus.github.io/basemap/stateborders.geojson",
       "generateId": true
     },
     "extra-adm1-labels": {
       "type": "geojson",
-      "data": "extra-adm1.geojson",
+      "data": "https://michaeljpincus.github.io/basemap/extra-adm1.geojson",
       "generateId": true
     },
     "extra-country-labels": {
       "type": "geojson",
-      "data": "extra-country-labels.geojson",
+      "data": "https://michaeljpincus.github.io/basemap/extra-country-labels.geojson",
       "generateId": true
     },
     "territory-labels": {
       "type": "geojson",
-      "data": "territories.geojson"
+      "data": "https://michaeljpincus.github.io/basemap/territories.geojson"
     },
     "uk-label": {
       "type": "geojson",
-      "data": "uk.geojson"
+      "data": "https://michaeljpincus.github.io/basemap/uk.geojson"
     },
     "westbank": {
       "type": "geojson",
-      "data": "westbank.geojson"
+      "data": "https://michaeljpincus.github.io/basemap/westbank.geojson"
     }
   },
   "layers": [
@@ -107,6 +107,7 @@
       "id": "adm1-borders",
       "type": "line",
       "source": "adm1-borders",
+      "minzoom": 4,
       "layout": {
         "line-cap": "round"
       },
@@ -185,7 +186,7 @@
         ["in", ["get", "class"], ["literal", ["city", "town"]]],
         ["!=", ["get", "capital"], 2]
       ],
-      "minzoom": 4,
+      "minzoom": 3,
       "maxzoom": 9,
       "paint": {
         "circle-color": "#000000",
@@ -200,7 +201,7 @@
       "source": "base",
       "source-layer": "place",
       "filter": ["in", ["get", "class"], ["literal", ["city", "town"]]],
-      "minzoom": 4,
+      "minzoom": 3,
       "maxzoom": 14,
       "layout": {
         "icon-image": ["case", ["==", ["get", "capital"], 2], "star", ""],
@@ -271,7 +272,7 @@
             "New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", "Tasmania",
             "Northern Territory", "Australian Capital Territory",
 
-            "Anhui", "Beijing", "Chongqing", "Fujian", "Gansu", "Guangdong", "Guangxi", "Guizhou", "Hainan", "Hebei",
+            "Anhui", "Beijing", "Chongqing City", "Fujian", "Gansu", "Guangdong", "Guangxi", "Guizhou", "Hainan", "Hebei",
             "Heilongjiang", "Henan", "Hubei", "Hunan", "Inner Mongolia", "Jiangsu", "Jiangxi", "Jilin", "Liaoning",
             "Ningxia", "Qinghai", "Shaanxi", "Shandong", "Shanghai", "Shanxi", "Sichuan", "Tianjin", "Tibet", "Xizang",
             "Xinjiang", "Yunnan", "Zhejiang", "Anhui Province", "Fujian Province", "Gansu Province", "Guangdong Province", "Guizhou Province",
@@ -285,7 +286,7 @@
           ]]
         ]
       ],
-      "minzoom": 2,
+      "minzoom": 4,
       "maxzoom": 8,
       "layout": {
         "text-field": [
@@ -464,7 +465,7 @@
 
             "Anhui", "AH",
             "Beijing", "BJ",
-            "Chongqing", "CQ",
+            "Chongqing City", "CQ",
             "Fujian", "FJ",
             "Gansu", "GS",
             "Guangdong", "GD",
@@ -527,7 +528,31 @@
             ["coalesce", ["get", "name:en"], ["get", "name"]]
           ],
           4,
-          ["coalesce", ["get", "name:en"], ["get", "name"]]
+          [
+            "let", "n", ["coalesce", ["get", "name:en"], ["get", "name"]],
+            [
+              "case",
+              [">", ["index-of", " Zhuang Autonomous Region", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Zhuang Autonomous Region", ["var", "n"]]],
+
+              [">", ["index-of", " Hui Autonomous Region", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Hui Autonomous Region", ["var", "n"]]],
+
+              [">", ["index-of", " Uyghur Autonomous Region", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Uyghur Autonomous Region", ["var", "n"]]],
+
+              [">", ["index-of", " Autonomous Region", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Autonomous Region", ["var", "n"]]],
+
+              [">", ["index-of", " Municipality", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Municipality", ["var", "n"]]],
+
+              [">", ["index-of", " Province", ["var", "n"]], 0],
+              ["slice", ["var", "n"], 0, ["index-of", " Province", ["var", "n"]]],
+
+              ["var", "n"]
+            ]
+          ]
         ],
         "text-font": ["Roboto Condensed Regular"],
         "text-transform": "uppercase",
@@ -549,6 +574,26 @@
       "maxzoom": 8,
       "layout": {
         "text-field": ["step", ["zoom"], ["get", "abbr"], 4, ["get", "name"]],
+        "text-font": ["Roboto Condensed Regular"],
+        "text-transform": "uppercase",
+        "text-letter-spacing": 0.18,
+        "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],
+        "text-max-width": 7
+      },
+      "paint": {
+        "text-color": "hsla(0, 0%, 20%, 0.55)",
+        "text-halo-color": "hsla(0, 0%, 100%, 0.6)",
+        "text-halo-width": 1.5
+      }
+    },
+    {
+      "id": "uk",
+      "type": "symbol",
+      "source": "uk-label",
+      "minzoom": 2,
+      "maxzoom": 8,
+      "layout": {
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
         "text-font": ["Roboto Condensed Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
@@ -629,26 +674,6 @@
       "paint": {
         "text-color": "hsl(0, 0%, 15%)",
         "text-halo-color": "hsla(0, 0%, 100%, 0.7)",
-        "text-halo-width": 1.5
-      }
-    },
-    {
-      "id": "uk",
-      "type": "symbol",
-      "source": "uk-label",
-      "minzoom": 2,
-      "maxzoom": 8,
-      "layout": {
-        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
-        "text-transform": "uppercase",
-        "text-letter-spacing": 0.18,
-        "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],
-        "text-max-width": 7
-      },
-      "paint": {
-        "text-color": "hsla(0, 0%, 20%, 0.55)",
-        "text-halo-color": "hsla(0, 0%, 100%, 0.6)",
         "text-halo-width": 1.5
       }
     },
