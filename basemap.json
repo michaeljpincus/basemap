@@ -50,6 +50,17 @@
       }
     },
     {
+      "id": "urban-areas",
+      "type": "fill",
+      "source": "base",
+      "source-layer": "landuse",
+      "minzoom": 6,
+      "paint": {
+        "fill-color": "#F2F2F2",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0.9, 12, 0.6, 15, 0.3]
+      }
+    },
+    {
       "id": "water",
       "type": "fill",
       "source": "base",
@@ -170,23 +181,6 @@
       }
     },
     {
-      "id": "capital-stars",
-      "type": "symbol",
-      "source": "base",
-      "source-layer": "place",
-      "filter": ["all",
-        ["in", ["get", "class"], ["literal", ["city", "town"]]],
-        ["==", ["get", "capital"], 2]
-      ],
-      "minzoom": 4,
-      "maxzoom": 9,
-      "layout": {
-        "icon-image": "star",
-        "icon-size": ["interpolate", ["linear"], ["zoom"], 4, 0.5, 8, 0.7],
-        "icon-allow-overlap": true
-      }
-    },
-    {
       "id": "cities",
       "type": "symbol",
       "source": "base",
@@ -195,6 +189,10 @@
       "minzoom": 4,
       "maxzoom": 14,
       "layout": {
+        "icon-image": ["case", ["==", ["get", "capital"], 2], "star", ""],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 4, 0.5, 8, 0.7, 9, 0.7, 9.01, 0],
+        "icon-optional": true,
+        "text-optional": true,
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
         "text-font": ["Roboto Condensed Regular"],
         "text-size": [
@@ -204,7 +202,7 @@
           12, ["interpolate", ["linear"], ["coalesce", ["get", "rank"], 99], 1, 22, 8, 14]
         ],
         "text-variable-anchor": ["top", "bottom", "left", "right"],
-        "text-radial-offset": 0.5,
+        "text-radial-offset": ["case", ["==", ["get", "capital"], 2], 0.8, 0.5],
         "symbol-sort-key": ["coalesce", ["get", "rank"], 99]
       },
       "paint": {
