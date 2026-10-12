@@ -258,6 +258,8 @@
       "source-layer": "place",
       "filter": [
         "all",
+        ["!=", ["coalesce", ["get", "name:en"], ["get", "name"]], "Amazonas"],
+        ["!=", ["coalesce", ["get", "name:en"], ["get", "name"]], "Punjab"],
         ["in", ["get", "class"], ["literal", ["state", "territory", "region"]]],
         ["in",
           ["coalesce", ["get", "name:en"], ["get", "name"]],
