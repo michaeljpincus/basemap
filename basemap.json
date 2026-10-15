@@ -27,11 +27,6 @@
       "data": "https://michaeljpincus.github.io/basemap/uk_borders.geojson",
       "generateId": true
     },
-    "bel-borders": {
-      "type": "geojson",
-      "data": "https://michaeljpincus.github.io/basemap/bel_borders.geojson",
-      "generateId": true
-    },
     "extra-adm1-labels": {
       "type": "geojson",
       "data": "https://michaeljpincus.github.io/basemap/extra-adm1.geojson",
@@ -117,20 +112,6 @@
       "id": "uk-borders",
       "type": "line",
       "source": "uk-borders",
-      "minzoom": 4,
-      "layout": {
-        "line-cap": "round"
-      },
-      "paint": {
-        "line-color": "#575757",
-        "line-width": 1,
-        "line-dasharray": [0, 3]
-      }
-    },
-    {
-      "id":  "bel-borders",
-      "type": "line",
-      "source": "bel-borders",
       "minzoom": 4,
       "layout": {
         "line-cap": "round"
