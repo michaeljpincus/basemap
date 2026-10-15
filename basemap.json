@@ -1,7 +1,7 @@
 {
   "version": 8,
   "projection": { "type": "globe" },
-  "glyphs": "https://michaeljpincus.github.io/basemap/fonts/{fontstack}/{range}.pbf",
+  "glyphs": "/fonts/{fontstack}/{range}.pbf",
   "sprite": "https://michaeljpincus.github.io/basemap/sprites/sprite",
   "sources": {
     "terrain": {
@@ -202,7 +202,7 @@
       "filter": ["in", ["get", "class"], ["literal", ["suburb", "quarter", "neighbourhood"]]],
       "layout": {
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.1,
         "text-size": ["interpolate", ["linear"], ["zoom"], 11, 10, 15, 13],
@@ -247,7 +247,7 @@
         "icon-optional": true,
         "text-optional": true,
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-size": [
           "interpolate", ["linear"], ["zoom"],
           4,  ["interpolate", ["linear"], ["coalesce", ["get", "rank"], 99], 1, 15, 8, 10],
@@ -594,7 +594,7 @@
             ]
           ]
         ],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],
@@ -614,7 +614,7 @@
       "maxzoom": 8,
       "layout": {
         "text-field": ["step", ["zoom"], ["get", "abbr"], 4, ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],
@@ -634,7 +634,7 @@
       "maxzoom": 8,
       "layout": {
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],
@@ -667,10 +667,11 @@
             ["Jersey"], " ",
             ["Isle of Man"], " ",
             ["Gibraltar"], " ",
+            ["Russia"], "Russian Federation",
             ["var", "n"]
           ]
         ],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 2, 12, 6, 17]
@@ -689,7 +690,7 @@
       "maxzoom": 8,
       "layout": {
         "text-field": ["get", "name"],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 2, 12, 6, 17],
@@ -711,7 +712,7 @@
       "maxzoom": 8,
       "layout": {
         "text-field": ["get", "name"],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 2, 12, 6, 17],
@@ -733,7 +734,7 @@
       "maxzoom": 10,
       "layout": {
         "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-        "text-font": ["Roboto Condensed Regular"],
+        "text-font": ["Plus Jakarta Sans Regular"],
         "text-transform": "uppercase",
         "text-letter-spacing": 0.18,
         "text-size": ["interpolate", ["linear"], ["zoom"], 3, 12, 6, 16, 8, 17],

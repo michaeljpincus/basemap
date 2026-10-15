@@ -7,7 +7,5 @@
     { "type": "Feature", "properties": { "name": "Tibet", "abbr": "XZ" }, "geometry": { "type": "Point", "coordinates": [88.0, 31.5] } },
     { "type": "Feature", "properties": { "name": "Amazonas", "abbr": "AM" }, "geometry": { "type": "Point", "coordinates": [-64.6, -4.2] } },
     { "type": "Feature", "properties": { "name": "Punjab", "abbr": "PJ" }, "geometry": { "type": "Point", "coordinates": [75.33, 30.89] } },
-    { "type": "Feature", "properties": { "name": "Flanders", "abbr": "FL" }, "geometry": { "type": "Point", "coordinates": [4.55, 51.0] } },
-    { "type": "Feature", "properties": { "name": "Wallonia", "abbr": "WA" }, "geometry": { "type": "Point", "coordinates": [4.9, 50.3] } }
   ]
 }
